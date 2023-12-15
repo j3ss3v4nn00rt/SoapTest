@@ -22,11 +22,11 @@ jobs:
       - name: Download and Run SoapUI Tests
         run: |
           docker run -i --rm \
-          -v Soap-try-soapui-project.xml:/opt/soapui/projects \
+          -v .:/opt/soapui/projects \
           -v tests:/opt/soapui/projects/testresult \
           lukastosic/docker-soapui \
           -e "http://demowebshop.tricentis.com/" \
           -s "Log in testing" \
           -r -j \
-          -f tests\
-          -I "https://github.com/j3ss3v4nn00rt/SoapTest/blob/97da032b79267a35db435351a0dd5ec215d74006/Soap-try-soapui-project.xml"
+          -f /opt/soapui/projects/testresult \
+          -I "Soap-try-soapui-project.xml"
