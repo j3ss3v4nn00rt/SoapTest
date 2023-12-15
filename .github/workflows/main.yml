@@ -29,4 +29,6 @@ jobs:
           -s "Log in testing" \
           -r -j \
           -f /opt/soapui/projects/testresult \
-          -I "Soap-try-soapui-project.xml"
+          -I "/opt/soapui/projects/logInTest.xml"
+
+  
