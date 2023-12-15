@@ -27,6 +27,9 @@ jobs:
       - name: verify there are no test failures
         run: | 
           if grep -q "(0 failed)" tests/testOutput.txt
-          then echo "Error: Found the line in the output" 
+          then echo "Success: No test failures" 
+          else
+          echo "Error: there are test failures, check tests/testOutput.txt for more information"
           exit 1 
           fi
+          
