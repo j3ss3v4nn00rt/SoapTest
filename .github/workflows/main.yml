@@ -18,6 +18,10 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      
+      - name: set Screen
+        run: export DISPLAY=:0.0
+      
 
       - name: Download and Run SoapUI Tests
         run: |
