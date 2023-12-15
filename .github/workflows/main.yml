@@ -25,5 +25,5 @@ jobs:
           -I "/opt/soapui/projects/Soap-try-soapui-project.xml" > tests/testOutput.txt
 
       - name: verify there are no test failures
-        run: if grep -q "YourPattern" ${{ github.workspace }}/path/to/logfile;
+        run: if grep -q "(0 failed)" tests/testOutput.txt;
         then echo "Error: Found the line in the output" exit 1 fi
